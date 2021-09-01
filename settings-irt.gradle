@@ -1,0 +1,20 @@
+// This is a basic configuration which is needed for using Figaf plugins. Please rename or copy this file to settings.gradle. 
+// If you already have your settings.gradle, please insert this configuration to the appropriate places.
+
+pluginManagement {
+    repositories {
+        mavenLocal()
+        maven { url "https://jitpack.io" }
+        gradlePluginPortal()
+    }
+}
+
+include "common"
+project (":common").projectDir = file("common")
+
+include "payloadpersistpoc"
+project (":payloadpersistpoc").projectDir = file("payloadpersistpoc")
+
+include "payloadpersistpoc:iflow-my_rest_call"
+project (":payloadpersistpoc:iflow-my_rest_call").projectDir = file("payloadpersistpoc/my_rest_call")
+
